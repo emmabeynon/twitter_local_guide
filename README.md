@@ -53,6 +53,13 @@ $ bin/rails s
 ```
 * Navigate to `http://localhost:3000` in your browser.
 
+Technologies used
+-----------------
+* Rails
+* Ruby
+* Twitter API
+* HAML
+
 Approach
 ---------
 
@@ -67,3 +74,4 @@ Further Work
 * Format tweet text to include special character e.g. &amp; => '&'
 * Format links in tweets to link properly
 * Format hashtags to link through to Twitter hashtag search
+* Format mentions in tweets to link through to user's twitter page
