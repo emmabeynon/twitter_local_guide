@@ -1,7 +1,7 @@
 %h1 SE23 Local Guide
 .tweets
   - @tweets.each do |tweet|
-    = tweet.user.name + " | @" + tweet.user.screen_name
+    = tweet.user.name + " | @" + tweet.user.screen_name + " | " + tweet.created_at.strftime("%d/%m/%y @ %H:%M")
     %br
     = tweet.text
     %p

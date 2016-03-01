@@ -63,3 +63,7 @@ Screenshots
 
 Further Work
 -------------
+* Link account username to twitter page
+* Format tweet text to include special character e.g. &amp; => '&'
+* Format links in tweets to link properly
+* Format hashtags to link through to Twitter hashtag search

@@ -8,6 +8,7 @@ feature 'Local tweets' do
 
   scenario 'should display a local account\'s tweets' do
     visit '/tweets'
-    expect(page).to have_content 'Archie Parker'
+    expect(page).to have_content 'Archie Parker | @TheArchieParker'
+    expect(page).to have_content '01/03/16 @ 13:39'
   end
 end
