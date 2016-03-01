@@ -1,1 +1,7 @@
 %h1 SE23 Local Guide
+.tweets
+  - @tweets.each do |tweet|
+    = tweet.user.name + " | @" + tweet.user.screen_name
+    %br
+    = tweet.text
+    %p
