@@ -1,6 +1,7 @@
 Twitter Local Guide
 ===================
 [![Build Status](https://travis-ci.org/emmabeynon/twitter_local_guide.svg?branch=master)](https://travis-ci.org/emmabeynon/twitter_local_guide)
+[![Coverage Status](https://coveralls.io/repos/github/emmabeynon/twitter_local_guide/badge.svg?branch=master)](https://coveralls.io/github/emmabeynon/twitter_local_guide?branch=master)
 
 Author: Emma Beynon
 
