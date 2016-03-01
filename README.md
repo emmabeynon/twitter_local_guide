@@ -1,5 +1,6 @@
 Twitter Local Guide
 ===================
+[![Build Status](https://travis-ci.org/emmabeynon/twitter_local_guide.svg?branch=master)](https://travis-ci.org/emmabeynon/twitter_local_guide)
 
 Author: Emma Beynon
 
