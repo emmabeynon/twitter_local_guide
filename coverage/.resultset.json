@@ -21,6 +21,7 @@
         1,
         null,
         null,
+        null,
         null
       ],
       "/Users/emma/Dropbox (Personal)/My_Projects/twitter_local_guide/spec/rails_helper.rb": [
@@ -379,6 +380,6 @@
         null
       ]
     },
-    "timestamp": 1456858393
+    "timestamp": 1456859450
   }
 }

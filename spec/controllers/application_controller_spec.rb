@@ -17,4 +17,5 @@ RSpec.describe ApplicationController, type: :controller do
       expect(controller.user_tweets('thearchieparker')).to eq('some tweets')
     end
   end
+
 end
