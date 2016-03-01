@@ -37,6 +37,10 @@ I would like to see tweets from museums, galleries and theatres only
 As a user
 So that I can do my shopping locally
 I would like to see tweets from shops only
+
+As a user
+So that I can see tweets from local accounts that I know already
+I would like to add a Twitter account to the app
 ```
 
 Instructions
