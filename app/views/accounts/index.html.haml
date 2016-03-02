@@ -1,0 +1,8 @@
+= form_tag accounts_path, :method => :post do
+  = label_tag :username, 'Username'
+  = text_field_tag :username
+  %br
+  = label_tag :category, 'Category'
+  = select_tag :category, options_for_select(['Eating out', 'Drinking']),:class => 'category'
+  %br
+  = submit_tag 'Submit'
