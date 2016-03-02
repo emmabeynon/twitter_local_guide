@@ -4,5 +4,10 @@ class AccountsController < ApplicationController
   end
 
   def create
+    accounts.create(account_params)
+  end
+
+  def account_params
+    params.require(:account).permit(:username, :category)
   end
 end
