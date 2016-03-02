@@ -14,5 +14,10 @@ feature 'Add account' do
       add_account('signalse23', 'Drinking')
       expect(page).to have_content 'There was an error. Please try again.'
     end
+
+    scenario 'does not allow user to submit a blank account username' do
+      add_account('', 'Drinking')
+      expect(page).to have_content 'There was an error. Please try again.'
+    end
   end
 end

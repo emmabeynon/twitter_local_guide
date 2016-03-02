@@ -103,8 +103,8 @@
         null,
         null,
         1,
-        13,
-        13,
+        14,
+        14,
         null,
         null,
         null
@@ -360,11 +360,11 @@
       ],
       "/Users/emma/Dropbox (Personal)/My_Projects/twitter_local_guide/spec/web_helpers.rb": [
         1,
-        3,
-        3,
-        3,
-        3,
-        3,
+        4,
+        4,
+        4,
+        4,
+        4,
         null
       ],
       "/Users/emma/Dropbox (Personal)/My_Projects/twitter_local_guide/app/controllers/accounts_controller.rb": [
@@ -374,18 +374,18 @@
         null,
         null,
         1,
-        6,
-        6,
+        7,
+        7,
         4,
         4,
         null,
-        2,
-        2,
+        3,
+        3,
         null,
         null,
         null,
         1,
-        6,
+        7,
         null,
         null,
         1,
@@ -407,11 +407,11 @@
         null,
         null,
         1,
-        19,
+        22,
         null,
         null,
         1,
-        19,
+        22,
         null,
         null
       ],
@@ -474,6 +474,11 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/emma/Dropbox (Personal)/My_Projects/twitter_local_guide/spec/features/tweets_feature_spec.rb": [
@@ -516,6 +521,6 @@
         null
       ]
     },
-    "timestamp": 1456935776
+    "timestamp": 1456936872
   }
 }
