@@ -53,4 +53,6 @@ group :test do
   gem 'capybara'
   gem 'rake'
   gem 'factory_girl_rails'
+  gem 'rspec-collection_matchers'
+  gem 'database_cleaner'
 end

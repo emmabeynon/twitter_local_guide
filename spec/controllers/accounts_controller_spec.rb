@@ -9,17 +9,26 @@ RSpec.describe AccountsController, type: :controller do
   end
 
   describe 'POST #create' do
-    it 'saves the account to the database' do
-      account = FactoryGirl.create(:account)
-      expect{
-        post :create, account: { username: account.username, account: account.category }
-      }.to change(Account,:count).by(1)
+    context 'if successful' do
+      let!(:account) {FactoryGirl.create(:account)}
+      it 'saves the account to the database' do
+        expect{
+          post :create, account: { username: 'username', category: 'Eating out' }
+        }.to change{ Account.count }.by(1)
+      end
+
+      it 'redirects to the tweets page' do
+        post :create, account: { username: 'username', category: 'Eating out' }
+        expect(response).to redirect_to '/tweets'
+      end
     end
 
-    it 'redirects to the tweets page' do
-      account = FactoryGirl.create(:account)
-      post :create, account: { username: account.username, account: account.category }
-      expect(response).to redirect_to '/tweets'
+    context 'if unsuccessful' do
+      it 'remains on account creation page' do
+        post :create, account: { username: '', category: ''}
+        expect(response).to render_template :index
+      end
     end
+
   end
 end
