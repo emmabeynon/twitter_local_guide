@@ -5,7 +5,7 @@ feature 'Add account' do
     visit '/'
     click_link 'Add an account'
     fill_in 'Username', with: 'signalse23'
-    page.select('Eating out', from: 'category')
+    page.select('Eating out', from: 'Category')
     click_button 'Submit'
     expect(page).to have_content 'Thanks for submitting this account.'
   end

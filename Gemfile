@@ -52,4 +52,5 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'rake'
+  gem 'factory_girl_rails'
 end

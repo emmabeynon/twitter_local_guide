@@ -9,6 +9,17 @@ RSpec.describe AccountsController, type: :controller do
   end
 
   describe 'POST #create' do
-    it {is_expected.to respond_to :create}
+    it 'saves the account to the database' do
+      account = FactoryGirl.create(:account)
+      expect{
+        post :create, account: { username: account.username, account: account.category }
+      }.to change(Account,:count).by(1)
+    end
+
+    it 'redirects to the tweets page' do
+      account = FactoryGirl.create(:account)
+      post :create, account: { username: account.username, account: account.category }
+      expect(response).to redirect_to '/tweets'
+    end
   end
 end
