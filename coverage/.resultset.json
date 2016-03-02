@@ -103,8 +103,8 @@
         null,
         null,
         1,
-        14,
-        14,
+        15,
+        15,
         null,
         null,
         null
@@ -513,14 +513,21 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/emma/Dropbox (Personal)/My_Projects/twitter_local_guide/app/models/account.rb": [
         1,
         1,
+        1,
         null
       ]
     },
-    "timestamp": 1456936872
+    "timestamp": 1456938832
   }
 }
