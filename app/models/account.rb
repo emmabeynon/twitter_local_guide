@@ -1,4 +1,5 @@
 class Account < ActiveRecord::Base
-  validates :username, presence: true, uniqueness: true
-  validates_format_of :username, with: /\A[A-Za-z0-9\_]/
+  message = "Only alphanumeric characters and underscores accepted"
+  validates :username, presence: true, uniqueness: true, length: {maximum: 15},
+  format: { with: /\A[A-Za-z0-9\_]/, message: message}
 end

@@ -19,4 +19,10 @@ describe Account, type: :model do
     expect(account).to have(1).error_on(:username)
     expect(account).not_to be_valid
   end
+
+  it 'does not accept usernames longer than 15 characters' do
+    account = Account.new(username: 'alongusername123')
+    expect(account).to have(1).error_on(:username)
+    expect(account).not_to be_valid
+  end
 end
