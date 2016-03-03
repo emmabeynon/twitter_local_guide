@@ -20,4 +20,8 @@ class AccountsController < ApplicationController
 
   def new
   end
+
+  def load_accounts
+    accounts = Account.all
+  end
 end

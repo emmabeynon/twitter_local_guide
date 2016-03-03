@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe AccountsController, type: :controller do
+  subject(:controller) { described_class.new }
+
   describe 'GET #index' do
     it 'renders the index view' do
       get :index
@@ -29,6 +31,14 @@ RSpec.describe AccountsController, type: :controller do
         expect(response).to render_template :index
       end
     end
+  end
 
+  describe '#load_accounts' do
+    it 'loads all Twitter accounts from the database' do
+      account1 = FactoryGirl.create(:account)
+      account2 = FactoryGirl.create(:account, username: 'signalse23', category: 'Drinking')
+      expect(controller.load_accounts[0]).to have_attributes username: 'thearchieparker'
+      expect(controller.load_accounts[1]).to have_attributes username: 'signalse23'
+    end
   end
 end

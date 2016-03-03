@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_filter :load_tweets
+
   def index
   end
 
