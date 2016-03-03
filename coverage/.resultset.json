@@ -5,7 +5,7 @@
         1,
         null,
         1,
-        6,
+        5,
         null,
         1,
         1,
@@ -35,14 +35,6 @@
         1,
         null,
         null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         null,
         null,
         null
@@ -401,9 +393,6 @@
         1,
         null,
         null,
-        1,
-        2,
-        null,
         null
       ],
       "/Users/emma/Dropbox (Personal)/My_Projects/twitter_local_guide/app/controllers/application_controller.rb": [
@@ -425,7 +414,7 @@
         1,
         null,
         1,
-        4,
+        5,
         2,
         null,
         1,
@@ -449,6 +438,14 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/emma/Dropbox (Personal)/My_Projects/twitter_local_guide/app/controllers/tweets_controller.rb": [
@@ -463,6 +460,10 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        2,
         null,
         null,
         1,
@@ -579,6 +580,6 @@
         null
       ]
     },
-    "timestamp": 1457012562
+    "timestamp": 1457013358
   }
 }

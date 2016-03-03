@@ -11,6 +11,10 @@ class TweetsController < ApplicationController
     config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
   end
 
+  def load_accounts
+    accounts = Account.all
+  end
+
   def load_tweets
     user_tweets('thearchieparker')
   end
