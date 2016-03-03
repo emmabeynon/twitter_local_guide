@@ -9,8 +9,8 @@ feature 'Feature: Local tweets' do
   end
 
   scenario 'should display a local account\'s tweets' do
+    add_account('thearchieparker', 'Eating out')
     visit '/tweets'
     expect(page).to have_content 'Archie Parker | @TheArchieParker'
-    expect(page).to have_content '01/03/16 @ 13:39'
   end
 end

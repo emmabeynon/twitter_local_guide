@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
-  before_filter :load_tweets
+  before_filter :load_accounts
+  attr_reader :accounts, :tweets
 
   def index
   end
@@ -12,14 +13,19 @@ class TweetsController < ApplicationController
   end
 
   def load_accounts
-    accounts = Account.all
+    @accounts = Account.all
+    load_tweets
   end
 
   def load_tweets
-    user_tweets('thearchieparker')
+    @tweets = []
+    @accounts.each do |account|
+      @tweets << user_tweets(account.username)
+    end
+    @tweets.flatten!.sort! { |a,b| b.created_at <=> a.created_at }
   end
 
   def user_tweets(username)
-    @tweets = CLIENT.user_timeline(username)
+    CLIENT.user_timeline(username)
   end
 end
