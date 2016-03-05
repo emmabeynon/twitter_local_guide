@@ -4,8 +4,8 @@ require 'rails_helper'
 # I would like to add a Twitter account to the app
 feature 'Feature: Add account' do
   context 'a valid account' do
-    scenario 'allow user to add an account and categeory' do
-      add_account('signalse23', 'Eating out')
+    scenario 'allow user to add an account and category' do
+      add_account('thearchieparker', 'Drinking')
       expect(page).to have_content 'Thanks for submitting this account.'
     end
   end

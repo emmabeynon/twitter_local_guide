@@ -76,6 +76,7 @@ Screenshots
 
 Further Work
 -------------
+* Deal with invalid twitter account before being entered into database
 * Link account username to twitter page
 * Format tweet text to include special character e.g. '&amp;' => '&'
 * Format links in tweets to link properly

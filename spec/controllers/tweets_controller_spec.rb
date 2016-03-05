@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe TweetsController, type: :controller do
   subject(:controller) { described_class.new }
   subject(:twitter_gem) { TweetsController::CLIENT }
+  let(:tweet) { double :tweet, created_at: '2016-03-03 14:49:40 +0000' }
 
   before(:each) do
     account1 = FactoryGirl.create(:account)
@@ -20,16 +21,17 @@ RSpec.describe TweetsController, type: :controller do
 
   describe '#load_tweets' do
     it 'calls user_tweets' do
-      allow(controller).to receive(:user_tweets).and_return('some tweets')
+      allow(controller).to receive(:user_tweets).with('thearchieparker').and_return([tweet])
+      allow(controller).to receive(:user_tweets).with('signalse23').and_return([tweet])
       controller.load_accounts
-      expect(controller.tweets).to eq(['some tweets', 'some tweets'])
+      expect(controller.tweets).to eq([tweet, tweet])
     end
   end
 
   describe '#user_tweets' do
     it 'returns a user' do
-      allow(twitter_gem).to receive(:user_timeline).with('thearchieparker').and_return('some tweets')
-      expect(controller.user_tweets('thearchieparker')).to eq('some tweets')
+      allow(twitter_gem).to receive(:user_timeline).with('thearchieparker').and_return(tweet)
+      expect(controller.user_tweets('thearchieparker')).to eq(tweet)
     end
   end
 

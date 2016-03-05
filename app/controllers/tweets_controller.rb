@@ -22,7 +22,8 @@ class TweetsController < ApplicationController
     @accounts.each do |account|
       @tweets << user_tweets(account.username)
     end
-    @tweets.flatten!.sort! { |a,b| b.created_at <=> a.created_at }
+    @tweets.flatten!
+    @tweets.sort! { |a,b| b.created_at <=> a.created_at }
   end
 
   def user_tweets(username)
