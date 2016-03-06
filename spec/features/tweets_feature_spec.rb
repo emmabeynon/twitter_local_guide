@@ -14,3 +14,16 @@ feature 'Feature: Local tweets' do
     expect(page).to have_content 'Archie Parker | @TheArchieParker'
   end
 end
+
+# As a user
+# So that I can choose somewhere to go out to eat
+# I would like to see tweets from restaurants and cafes only
+feature 'Feature: Categorisation' do
+  scenario 'should display tweets from the \'Eating Out\' category only' do
+    add_account('canvasandcream', 'Eating out')
+    visit '/tweets'
+    click_link 'Eating out'
+    expect(page).to have_content 'Eating out'
+    expect(page).to have_content 'Canvas&Cream | @CanvasandCream'
+  end
+end

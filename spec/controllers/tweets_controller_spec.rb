@@ -42,4 +42,11 @@ RSpec.describe TweetsController, type: :controller do
       expect(controller.accounts[1]).to have_attributes username: 'signalse23'
     end
   end
+
+  describe 'GET #eating_out' do
+    it 'renders the eating_out view' do
+      get :eating_out
+      expect(response).to render_template :eating_out
+    end
+  end
 end

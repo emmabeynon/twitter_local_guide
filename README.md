@@ -68,7 +68,7 @@ Technologies used
 
 Approach
 ---------
-
+As an alternative approach, I could have used a database to store tweets instead of hitting the Twitter API every time the page loads.
 
 Screenshots
 ------------
@@ -78,7 +78,7 @@ Further Work
 -------------
 * Deal with invalid twitter account before being entered into database
 * Link account username to twitter page
-* Format tweet text to include special character e.g. '&amp;' => '&'
+* Format tweet text to display special characters correctly
 * Format links in tweets to link properly
 * Format hashtags to link through to Twitter hashtag search
 * Format mentions in tweets to link through to user's twitter page

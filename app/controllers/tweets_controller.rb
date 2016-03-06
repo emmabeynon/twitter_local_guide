@@ -5,6 +5,11 @@ class TweetsController < ApplicationController
   def index
   end
 
+  def show
+    @category = Account.where(category: 'Eating out')
+    render :index
+  end
+
   CLIENT = Twitter::REST::Client.new do |config|
     config.consumer_key = ENV['CONSUMER_KEY']
     config.consumer_secret = ENV['CONSUMER_SECRET']
@@ -19,7 +24,7 @@ class TweetsController < ApplicationController
 
   def load_tweets
     @tweets = []
-    @accounts.each do |account|
+    accounts.each do |account|
       @tweets << user_tweets(account.username)
     end
     @tweets.flatten!
@@ -28,5 +33,9 @@ class TweetsController < ApplicationController
 
   def user_tweets(username)
     CLIENT.user_timeline(username)
+  end
+
+  def eating_out
+    render :eating_out
   end
 end
