@@ -2,14 +2,6 @@ class TweetsController < ApplicationController
   before_filter :load_accounts
   attr_reader :accounts, :tweets
 
-  def index
-  end
-
-  def show
-    @category = Account.where(category: 'Eating out')
-    render :index
-  end
-
   CLIENT = Twitter::REST::Client.new do |config|
     config.consumer_key = ENV['CONSUMER_KEY']
     config.consumer_secret = ENV['CONSUMER_SECRET']
@@ -17,8 +9,19 @@ class TweetsController < ApplicationController
     config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
   end
 
-  def load_accounts
-    @accounts = Account.all
+  def index
+  end
+
+  def show
+    page = params[:id]
+    category = 'Eating out' if page == 'eating_out'
+    load_accounts(category)
+    render page
+  end
+
+
+  def load_accounts(category='Drinking')
+    @accounts = Account.where(category: category)
     load_tweets
   end
 
@@ -35,7 +38,4 @@ class TweetsController < ApplicationController
     CLIENT.user_timeline(username)
   end
 
-  def eating_out
-    render :eating_out
-  end
 end

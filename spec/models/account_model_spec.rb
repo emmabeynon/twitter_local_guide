@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 describe Account, type: :model do
+
+  it { is_expected.to callback(:format_category).before(:save) }
+  
   describe 'username' do
     it 'does not accept duplicate account usernames' do
       account1 = Account.create(username: 'thearchieparker', category: 'Eating out')

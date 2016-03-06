@@ -55,4 +55,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'rspec-collection_matchers'
   gem 'database_cleaner'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
 end
