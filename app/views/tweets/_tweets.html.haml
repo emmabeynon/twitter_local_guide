@@ -3,6 +3,7 @@
     .list-group-item
       %strong
         = tweet.user.name
-      = " @" + tweet.user.screen_name + " - " + tweet.created_at.strftime("%d %b %Y, %H:%M")
+      = "#{link_to "@" + tweet.user.screen_name, "http://twitter.com/" + tweet.user.screen_name}".html_safe + " - "
+      = tweet.created_at.strftime("%d %b %Y, %H:%M")
       %br
       = tweet.text
