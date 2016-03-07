@@ -26,4 +26,15 @@ feature 'Feature: Categorisation' do
     expect(page).to have_content 'Eating out'
     expect(page).to have_content 'Canvas&Cream | @CanvasandCream'
   end
+
+# As a user
+# So that I can choose somewhere to go for a drink
+# I would like to see tweets from pubs and bars only
+  scenario 'should display tweets from the \'Drinking\' category only' do
+    add_account('signalse23', 'Drinking')
+    visit '/tweets'
+    click_link 'Drinking'
+    expect(page).to have_content 'Drinking'
+    expect(page).to have_content 'The Signal | @SignalSE23'
+  end
 end

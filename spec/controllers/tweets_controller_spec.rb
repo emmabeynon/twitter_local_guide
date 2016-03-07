@@ -6,8 +6,8 @@ RSpec.describe TweetsController, type: :controller do
   let(:tweet) { double :tweet, created_at: '2016-03-03 14:49:40 +0000' }
 
   before(:each) do
-    account1 = FactoryGirl.create(:account)
-    account2 = FactoryGirl.create(:account, username: 'signalse23', category: 'drinking')
+    account1 = FactoryGirl.create(:account, :drinking1)
+    account2 = FactoryGirl.create(:account, :drinking2)
     Account.create(username: account1.username, category: account1.category)
     Account.create(username: account2.username, category: account2.category)
   end
@@ -23,7 +23,7 @@ RSpec.describe TweetsController, type: :controller do
     it 'calls user_tweets' do
       allow(controller).to receive(:user_tweets).with('signalse23').and_return([tweet])
       allow(controller).to receive(:user_tweets).with('TheHonorOak_Pub').and_return([tweet])
-      controller.load_accounts
+      controller.load_accounts('drinking')
       expect(controller.tweets).to eq([tweet, tweet])
     end
   end
@@ -37,16 +37,9 @@ RSpec.describe TweetsController, type: :controller do
 
   describe '#load_accounts' do
     it 'loads all Twitter accounts from the database' do
-      controller.load_accounts
+      controller.load_accounts('drinking')
       expect(controller.accounts[0]).to have_attributes username: 'TheHonorOak_Pub'
       expect(controller.accounts[1]).to have_attributes username: 'signalse23'
-    end
-  end
-
-  describe 'GET #eating_out' do
-    it 'renders the eating_out view' do
-      get :eating_out
-      expect(response).to render_template :eating_out
     end
   end
 end

@@ -7,7 +7,9 @@
 
   %body
     %h1 SE23 Local Guide
-    = link_to 'Eating out', tweets_eating_out_path
+    = link_to 'Eating out', tweet_path('eating_out')
+    = link_to 'Drinking', tweet_path('drinking')
+    %br
     = link_to 'Add an account', accounts_url
     - if flash[:notice]
       %p

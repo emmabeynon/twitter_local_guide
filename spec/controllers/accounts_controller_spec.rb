@@ -12,10 +12,9 @@ RSpec.describe AccountsController, type: :controller do
 
   describe 'POST #create' do
     context 'if successful' do
-      let!(:account) {FactoryGirl.create(:account)}
       it 'saves the account to the database' do
         expect{
-          post :create, account: { username: 'username', category: 'Eating out' }
+          post :create, account: { username: 'username', category: 'drinking' }
         }.to change{ Account.count }.by(1)
       end
 
