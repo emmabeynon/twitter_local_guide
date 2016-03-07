@@ -45,6 +45,7 @@ I would like to add a Twitter account to the app
 
 Instructions
 ------------
+You can find a deployed version of this app at http://se23-local-guide.herokuapp.com/
 To create your own version:
 
 * Fork this repo and clone to your local machine.
@@ -63,21 +64,30 @@ Technologies used
 -----------------
 * Rails
 * Ruby
+* PostgreSQL
 * Twitter API
 * HAML
+* Bootstrap
+* RSpec
+* Capybara
 
 Approach
 ---------
-As an alternative approach, I could have used a database to store tweets instead of hitting the Twitter API every time the page loads.
+For this project I decided to start by compiling a list of Twitter accounts whose tweets I would want to display in the app.  I created a form for users to input a Twitter account username and select a category for the account.  This category acts as a filter to only display  tweets from accounts whose category matches the one that user has selected.  I added validations to ensure that duplicate accounts, blank usernames and usernames more than 15 characters (Twitter's max username limit) weren't added.  In future, I would like to find a way to verify that the username exists on Twitter.  The accounts are saved to a PostgreSQL database and loaded by the controller when the page loads.
+
+Next I looked at displaying each account's tweets.  I used the Twitter Ruby gem as an interface to the Twitter API so that I could load the last 20 tweets for each account.  After the tweets have been loaded, they are sorted in descending chronological order and are ready to be displayed in the view.  As an alternative approach, I could have used a database to store the tweets instead of hitting the Twitter API every time the page loads.
+
+Now that I could retrieve tweets, I wanted to display them by category.  I initially attempted this by creating routes for each category, however I then realised I could make use of the pre-generated Rails routes.  Using the id param at the end of the URI (e.g. '/tweets/eating_out') for each category, the app can load only the accounts that belong to that category and subsequently only the tweets from those accounts.  This each time the user navigates to a category page.
+
+This project was test-driven using RSpec for the unit and controller tests, and RSpec/Capybara for the feature tests.  
 
 Screenshots
 ------------
-
+![Eating out](http://i.imgur.com/b1pupDv.png)
 
 Further Work
 -------------
-* Deal with invalid twitter account before being entered into database
-* Link account username to twitter page
+* Check if twitter accounts exist before adding to database
 * Format tweet text to display special characters correctly
 * Format links in tweets to link properly
 * Format hashtags to link through to Twitter hashtag search

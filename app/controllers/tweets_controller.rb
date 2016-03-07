@@ -19,7 +19,6 @@ class TweetsController < ApplicationController
     render category
   end
 
-
   def load_accounts(category='eating_out')
     @accounts = Account.where(category: category)
     load_tweets
@@ -27,9 +26,7 @@ class TweetsController < ApplicationController
 
   def load_tweets
     @tweets = []
-    accounts.each do |account|
-      @tweets << user_tweets(account.username)
-    end
+    accounts.each { |account| @tweets << user_tweets(account.username) }
     @tweets.flatten!
     @tweets.sort! { |a,b| b.created_at <=> a.created_at }
   end
