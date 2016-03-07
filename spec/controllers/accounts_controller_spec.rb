@@ -20,7 +20,7 @@ RSpec.describe AccountsController, type: :controller do
 
       it 'redirects to the tweets page' do
         post :create, account: { username: 'username', category: 'Eating out' }
-        expect(response).to redirect_to '/tweets'
+        expect(response).to redirect_to '/tweets/eating_out'
       end
     end
 

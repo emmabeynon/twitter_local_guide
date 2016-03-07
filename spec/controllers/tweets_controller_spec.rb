@@ -13,9 +13,9 @@ RSpec.describe TweetsController, type: :controller do
   end
 
   describe 'GET #index' do
-    it 'renders the index view' do
+    it 'renders the eating out view' do
       get :index
-      expect(response).to render_template :index
+      expect(response).to render_template :eating_out
     end
   end
 

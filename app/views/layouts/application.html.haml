@@ -6,16 +6,27 @@
     = csrf_meta_tag
 
   %body
-    %h1 SE23 Local Guide
-    = link_to 'Eating out', tweet_path('eating_out')
-    = link_to 'Drinking', tweet_path('drinking')
-    = link_to 'Culture', tweet_path('culture')
-    = link_to 'Shopping', tweet_path('shopping')
-    %br
-    = link_to 'Add an account', accounts_url
+    %div{ :role => "navigation" }
+      %ul.nav.nav-tabs
+        %li
+          %h4 SE23 Local Guide
+        %li{ :role => "presentation"}
+          %h4
+            = link_to 'Eating out', tweet_path('eating_out')
+        %li{ :role => "presentation"}
+          %h4
+            = link_to 'Drinking', tweet_path('drinking')
+        %li{ :role => "presentation"}
+          %h4
+            = link_to 'Culture', tweet_path('culture')
+        %li{ :role => "presentation"}
+          %h4
+            = link_to 'Shopping', tweet_path('shopping')
+        %li.navbar-right
+          = link_to 'Add an account', accounts_url
     - if flash[:notice]
-      %p
-      = flash[:notice]
+      %p.alert.alert-info
+        = flash[:notice]
     %p
 
-  = yield
+    = yield
