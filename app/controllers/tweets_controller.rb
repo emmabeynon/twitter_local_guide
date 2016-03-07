@@ -14,13 +14,13 @@ class TweetsController < ApplicationController
 
   def show
     page = params[:id]
-    category = 'Eating out' if page == 'eating_out'
-    load_accounts(category)
+    # category = 'Eating out' if page == 'eating_out'
+    load_accounts(page)
     render page
   end
 
 
-  def load_accounts(category='Drinking')
+  def load_accounts(category='drinking')
     @accounts = Account.where(category: category)
     load_tweets
   end

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :account do
-    username 'thearchieparker'
-    category 'Eating out'
+    username 'TheHonorOak_Pub'
+    category 'drinking'
   end
 end
