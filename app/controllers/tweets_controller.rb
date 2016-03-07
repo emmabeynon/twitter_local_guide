@@ -10,6 +10,7 @@ class TweetsController < ApplicationController
   end
 
   def index
+    render :eating_out
   end
 
   def show

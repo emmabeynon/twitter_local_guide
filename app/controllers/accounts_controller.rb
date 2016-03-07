@@ -7,7 +7,7 @@ class AccountsController < ApplicationController
     account = Account.new(account_params)
     if account.save
       flash[:notice] = "Thanks for submitting this account."
-      redirect_to tweets_path
+      redirect_to tweet_path('eating_out')
     else
       flash[:notice] = "There was an error. Please try again."
       render :index
