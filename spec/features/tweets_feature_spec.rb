@@ -37,4 +37,15 @@ feature 'Feature: Categorisation' do
     expect(page).to have_content 'Drinking'
     expect(page).to have_content 'The Signal | @SignalSE23'
   end
+
+# As a user
+# So that I can choose somewhere to go to enjoy some culture
+# I would like to see tweets from museums, galleries and theatres only
+  scenario 'should display tweets from the \'Culture\' category only' do
+    add_account('HornimanMuseum', 'Culture')
+    visit '/tweets'
+    click_link 'Culture'
+    expect(page).to have_content 'Culture'
+    expect(page).to have_content 'Horniman Museum | @HornimanMuseum'
+  end
 end
