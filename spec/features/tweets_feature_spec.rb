@@ -11,7 +11,7 @@ feature 'Feature: Local tweets' do
   scenario 'should display a local account\'s tweets' do
     add_account('thearchieparker', 'Eating out')
     visit '/tweets'
-    expect(page).to have_content 'Archie Parker | @TheArchieParker'
+    expect(page).to have_content 'Archie Parker @TheArchieParker'
   end
 end
 
@@ -24,8 +24,8 @@ feature 'Feature: Categorisation' do
     visit '/tweets'
     click_link 'Eating out'
     expect(page).to have_content 'Eating out'
-    expect(page).to have_content 'Canvas&Cream | @CanvasandCream'
-    expect(page).not_to have_content 'Horniman Museum | @HornimanMuseum'
+    expect(page).to have_content 'Canvas&Cream @CanvasandCream'
+    expect(page).not_to have_content 'Horniman Museum @HornimanMuseum'
   end
 
 # As a user
@@ -36,8 +36,8 @@ feature 'Feature: Categorisation' do
     visit '/tweets'
     click_link 'Drinking'
     expect(page).to have_content 'Drinking'
-    expect(page).to have_content 'The Signal | @SignalSE23'
-    expect(page).not_to have_content 'Horniman Museum | @HornimanMuseum'
+    expect(page).to have_content 'The Signal @SignalSE23'
+    expect(page).not_to have_content 'Horniman Museum @HornimanMuseum'
   end
 
 # As a user
@@ -48,8 +48,8 @@ feature 'Feature: Categorisation' do
     visit '/tweets'
     click_link 'Culture'
     expect(page).to have_content 'Culture'
-    expect(page).to have_content 'Horniman Museum | @HornimanMuseum'
-    expect(page).not_to have_content 'The Signal | @SignalSE23'
+    expect(page).to have_content 'Horniman Museum @HornimanMuseum'
+    expect(page).not_to have_content 'The Signal @SignalSE23'
   end
 
 # As a user
@@ -60,7 +60,7 @@ feature 'Feature: Categorisation' do
     visit '/tweets'
     click_link 'Shopping'
     expect(page).to have_content 'Shopping'
-    expect(page).to have_content 'Bunka | @bunkaforesthill'
-    expect(page).not_to have_content 'Horniman Museum | @HornimanMuseum'
+    expect(page).to have_content 'Bunka @bunkaforesthill'
+    expect(page).not_to have_content 'Horniman Museum @HornimanMuseum'
   end
 end
