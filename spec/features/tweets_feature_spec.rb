@@ -25,6 +25,7 @@ feature 'Feature: Categorisation' do
     click_link 'Eating out'
     expect(page).to have_content 'Eating out'
     expect(page).to have_content 'Canvas&Cream | @CanvasandCream'
+    expect(page).not_to have_content 'Horniman Museum | @HornimanMuseum'
   end
 
 # As a user
@@ -36,6 +37,7 @@ feature 'Feature: Categorisation' do
     click_link 'Drinking'
     expect(page).to have_content 'Drinking'
     expect(page).to have_content 'The Signal | @SignalSE23'
+    expect(page).not_to have_content 'Horniman Museum | @HornimanMuseum'
   end
 
 # As a user
@@ -47,5 +49,18 @@ feature 'Feature: Categorisation' do
     click_link 'Culture'
     expect(page).to have_content 'Culture'
     expect(page).to have_content 'Horniman Museum | @HornimanMuseum'
+    expect(page).not_to have_content 'The Signal | @SignalSE23'
+  end
+
+# As a user
+# So that I can do my shopping locally
+# I would like to see tweets from shops only
+  scenario 'should display tweets from the \'Shopping\' category only' do
+    add_account('bunkaforesthill', 'Shopping')
+    visit '/tweets'
+    click_link 'Shopping'
+    expect(page).to have_content 'Shopping'
+    expect(page).to have_content 'Bunka | @bunkaforesthill'
+    expect(page).not_to have_content 'Horniman Museum | @HornimanMuseum'
   end
 end
